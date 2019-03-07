@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'node_modules/@progress/kendo-theme-material/scss/all';
+@import './variables.scss';
 
-body {
-  font-family: Roboto, sans-serif;
+html {
+  height: 100%;
 }
 
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Roboto ', sans-serif;
@@ -13,4 +15,8 @@ body {
   color: #212121;
   line-height: 1.4;
   background-color: #f9f9f9;
+}
+
+.container {
+  padding: calc(10 * #{$baseGridSpacing});
 }
