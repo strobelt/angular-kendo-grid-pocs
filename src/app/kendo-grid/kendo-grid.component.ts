@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GroupDescriptor, DataResult, process } from '@progress/kendo-data-query';
-import { products } from './products';
+import { GroupDescriptor, process, State, CompositeFilterDescriptor } from '@progress/kendo-data-query';
+import { sampleProducts } from './products';
+import { GridDataResult, DataStateChangeEvent } from '@progress/kendo-angular-grid';
 
 @Component({
   selector: 'app-kendo-grid',
@@ -10,18 +11,25 @@ import { products } from './products';
 export class KendoGridComponent implements OnInit {
   public groups: GroupDescriptor[] = [{ field: 'Category.CategoryName' }];
 
-  public gridView: DataResult;
+  public state: State = {
+    filter: {
+      logic: 'and',
+      filters: [{ field: 'ProductName', operator: 'contains', value: 'Chef' }]
+    }
+  };
+  public gridView: GridDataResult;
 
   public ngOnInit() {
     this.loadProducts();
   }
 
-  public groupChange(groups: GroupDescriptor[]): void {
-    this.groups = groups;
-    this.loadProducts();
+  public dataStateChange(dataState: DataStateChangeEvent): void {
+    this.state = dataState;
+    this.groups = dataState.group;
+    this.loadProducts
   }
 
   private loadProducts(): void {
-    this.gridView = process(products, { group: this.groups });
+    this.gridView = process(sampleProducts, { ...this.state });
   }
 }

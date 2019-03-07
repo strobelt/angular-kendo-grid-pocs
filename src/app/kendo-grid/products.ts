@@ -1414,4 +1414,3 @@ export const products = [{
         "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
     }
 }];
-
