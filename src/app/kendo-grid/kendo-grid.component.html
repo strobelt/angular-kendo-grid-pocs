@@ -1,9 +1,9 @@
 <div class="container">
   <kendo-grid [data]="gridView"
               [groupable]="true"
-              [group]="groups"
+              [group]="state.group"
               [filterable]="true"
-              [filter]="state.size"
+              [filter]="state.filter"
               (dataStateChange)="dataStateChange($event)">
     <kendo-grid-column field="ProductID"
                        title="ID"

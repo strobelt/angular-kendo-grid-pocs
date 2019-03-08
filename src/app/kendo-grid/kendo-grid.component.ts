@@ -9,13 +9,12 @@ import { GridDataResult, DataStateChangeEvent } from '@progress/kendo-angular-gr
   styleUrls: ['./kendo-grid.component.scss']
 })
 export class KendoGridComponent implements OnInit {
-  public groups: GroupDescriptor[] = [{ field: 'Category.CategoryName' }];
-
   public state: State = {
     filter: {
       logic: 'and',
       filters: [{ field: 'ProductName', operator: 'contains', value: 'Chef' }]
-    }
+    },
+    group: [{ field: 'Category.CategoryName' }]
   };
   public gridView: GridDataResult;
 
@@ -25,11 +24,10 @@ export class KendoGridComponent implements OnInit {
 
   public dataStateChange(dataState: DataStateChangeEvent): void {
     this.state = dataState;
-    this.groups = dataState.group;
-    this.loadProducts
+    this.loadProducts();
   }
 
   private loadProducts(): void {
-    this.gridView = process(sampleProducts, { ...this.state });
+    this.gridView = process(sampleProducts, this.state);
   }
 }
