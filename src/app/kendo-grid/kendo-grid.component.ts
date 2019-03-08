@@ -9,6 +9,11 @@ import { GridDataResult, DataStateChangeEvent } from '@progress/kendo-angular-gr
   styleUrls: ['./kendo-grid.component.scss']
 })
 export class KendoGridComponent implements OnInit {
+  public sortable = {
+    allowUnsort: true,
+    mode: 'multiple'
+  };
+
   public state: State = {
     skip: 0,
     take: 5,
