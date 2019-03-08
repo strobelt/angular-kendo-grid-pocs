@@ -10,6 +10,14 @@
               [filterable]="true"
               [filter]="state.filter"
               (dataStateChange)="dataStateChange($event)">
+    <ng-template kendoGridToolbarTemplate>
+      <button type="button"
+              kendoGridPDFCommand
+              icon="file-pdf">Baixar PDF</button>
+      <button type="button"
+              kendoGridExcelCommand
+              icon="file-excel">Baixar Excel</button>
+    </ng-template>
     <kendo-grid-column field="ProductID"
                        title="ID"
                        [width]="80"
@@ -35,5 +43,13 @@
         {{value}}
       </ng-template>
     </kendo-grid-column>
+    <kendo-grid-pdf fileName="Produtos.pdf"
+                    [allPages]="true">
+      <kendo-grid-pdf-margin top="1cm"
+                             left="1cm"
+                             right="1cm"
+                             bottom="1cm"></kendo-grid-pdf-margin>
+    </kendo-grid-pdf>
+    <kendo-grid-excel fileName="Produtos.xlsx"></kendo-grid-excel>
   </kendo-grid>
 </div>

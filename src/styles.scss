@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'node_modules/@progress/kendo-theme-material/scss/all';
 @import './variables.scss';
+@font-face {
+  font-family: 'DejaVu Sans';
+  src: url('https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DejaVu Sans';
+  font-weight: bold;
+  src: url('https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DejaVu Sans';
+  font-style: italic;
+  src: url('https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DejaVu Sans';
+  font-weight: bold;
+  font-style: italic;
+  src: url('https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf') format('truetype');
+}
 
 html {
   height: 100%;

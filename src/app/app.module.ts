@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KendoGridComponent } from './kendo-grid/kendo-grid.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { GridModule } from '@progress/kendo-angular-grid';
+import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -18,7 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     GridModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PDFModule,
+    ExcelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
