@@ -2,6 +2,10 @@
   <kendo-grid [data]="gridView"
               [groupable]="true"
               [group]="state.group"
+              [skip]="state.skip"
+              [sort]="state.sort"
+              [pageSize]="state.take"
+              [pageable]="true"
               [filterable]="true"
               [filter]="state.filter"
               (dataStateChange)="dataStateChange($event)">

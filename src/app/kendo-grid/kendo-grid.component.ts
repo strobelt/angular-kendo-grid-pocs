@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GroupDescriptor, process, State, CompositeFilterDescriptor } from '@progress/kendo-data-query';
+import { process, State } from '@progress/kendo-data-query';
 import { sampleProducts } from './products';
 import { GridDataResult, DataStateChangeEvent } from '@progress/kendo-angular-grid';
 
@@ -10,6 +10,8 @@ import { GridDataResult, DataStateChangeEvent } from '@progress/kendo-angular-gr
 })
 export class KendoGridComponent implements OnInit {
   public state: State = {
+    skip: 0,
+    take: 5,
     filter: {
       logic: 'and',
       filters: [{ field: 'ProductName', operator: 'contains', value: 'Chef' }]
