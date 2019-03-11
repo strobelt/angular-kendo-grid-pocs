@@ -9,6 +9,9 @@
               [pageable]="true"
               [filterable]="true"
               [filter]="state.filter"
+              [reorderable]="true"
+              [resizable]="true"
+              [selectable]="selectableOptions"
               (dataStateChange)="dataStateChange($event)">
     <ng-template kendoGridToolbarTemplate>
       <button type="button"
@@ -18,6 +21,7 @@
               kendoGridExcelCommand
               icon="file-excel">Baixar Excel</button>
     </ng-template>
+    <kendo-grid-checkbox-column width="50"></kendo-grid-checkbox-column>
     <kendo-grid-column field="ProductID"
                        title="ID"
                        [width]="80"
@@ -43,6 +47,16 @@
         {{value}}
       </ng-template>
     </kendo-grid-column>
+    <ng-template kendoGridDetailTemplate
+                 let-dataItem>
+      <section *ngIf="dataItem.Category">
+        <p><strong>In Stock:</strong> {{dataItem.UnitsInStock}} units</p>
+        <p><strong>On Order:</strong> {{dataItem.UnitsOnOrder}} units</p>
+        <p><strong>Reorder Level:</strong> {{dataItem.ReorderLevel}} units</p>
+        <p><strong>Discontinued:</strong> {{dataItem.Discontinued}}</p>
+        <p><strong>Category:</strong> {{dataItem.Category?.CategoryName}} - {{dataItem.Category?.Description}}</p>
+      </section>
+    </ng-template>
     <kendo-grid-pdf fileName="Produtos.pdf"
                     [allPages]="true">
       <kendo-grid-pdf-margin top="1cm"

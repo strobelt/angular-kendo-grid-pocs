@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { process, State } from '@progress/kendo-data-query';
 import { sampleProducts } from './products';
-import { GridDataResult, DataStateChangeEvent } from '@progress/kendo-angular-grid';
+import { GridDataResult, DataStateChangeEvent, SelectableSettings } from '@progress/kendo-angular-grid';
 
 @Component({
   selector: 'app-kendo-grid',
@@ -9,6 +9,11 @@ import { GridDataResult, DataStateChangeEvent } from '@progress/kendo-angular-gr
   styleUrls: ['./kendo-grid.component.scss']
 })
 export class KendoGridComponent implements OnInit {
+  public selectableOptions: SelectableSettings = {
+    checkboxOnly: false,
+    mode: 'multiple'
+  };
+
   public sortable = {
     allowUnsort: true,
     mode: 'multiple'
