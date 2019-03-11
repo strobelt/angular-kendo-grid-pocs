@@ -16,9 +16,7 @@
                 "CategoryName": "Beverages",
                 "Description": "Soft drinks, coffees, teas, beers, and ales"
             },
-            "FirstOrderedOn": new Date(1996,
-            8,
-            20)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 2,
@@ -36,9 +34,7 @@
                 "CategoryName": "Beverages",
                 "Description": "Soft drinks, coffees, teas, beers, and ales"
             },
-            "FirstOrderedOn": new Date(1996,
-            7,
-            12)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 3,
@@ -56,9 +52,7 @@
                 "CategoryName": "Condiments",
                 "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
             },
-            "FirstOrderedOn": new Date(1996,
-            8,
-            26)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 4,
@@ -76,9 +70,7 @@
                 "CategoryName": "Condiments",
                 "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
             },
-            "FirstOrderedOn": new Date(1996,
-            9,
-            19)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 5,
@@ -96,9 +88,7 @@
                 "CategoryName": "Condiments",
                 "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
             },
-            "FirstOrderedOn": new Date(1996,
-            7,
-            17)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 6,
@@ -116,9 +106,7 @@
                 "CategoryName": "Condiments",
                 "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
             },
-            "FirstOrderedOn": new Date(1996,
-            9,
-            19)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 7,
@@ -136,9 +124,7 @@
                 "CategoryName": "Produce",
                 "Description": "Dried fruit and bean curd"
             },
-            "FirstOrderedOn": new Date(1996,
-            7,
-            22)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 8,
@@ -156,9 +142,7 @@
                 "CategoryName": "Condiments",
                 "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
             },
-            "FirstOrderedOn": new Date(1996,
-            11,
-            1)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 9,
@@ -176,9 +160,7 @@
                 "CategoryName": "Meat/Poultry",
                 "Description": "Prepared meats"
             },
-            "FirstOrderedOn": new Date(1997,
-            1,
-            21)
+            "FirstOrderedOn": "2018-09-10"
         },
         {
             "ProductID": 10,
@@ -196,9 +178,7 @@
                 "CategoryName": "Seafood",
                 "Description": "Seaweed and fish"
             },
-            "FirstOrderedOn": new Date(1996,
-            8,
-            5)
+            "FirstOrderedOn": "2018-09-10"
         }
     ];
 
