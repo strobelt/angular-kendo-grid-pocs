@@ -25,7 +25,7 @@ exports.read_product = (req, res) =>
         res.json(product)
     })
 
-exports.update_task = (req, res) =>
+exports.update_product = (req, res) =>
     Product.findOneAndUpdate({ _id: req.params.productId }, req.body, (err, product) => {
         if (err)
             res.send(err)

@@ -10,6 +10,6 @@ module.exports = (app) => {
 
     app.route('/products/:productId')
         .get(productController.read_product)
-        .put(productController.update_task)
+        .put(productController.update_product)
         .delete(productController.delete_product)
 }

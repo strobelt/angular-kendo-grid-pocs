@@ -19,6 +19,7 @@ export class ProductService extends BehaviorSubject<Product[]> {
     }
 
     private data: any[] = [];
+    private apiUrl = 'http://localhost:3000/products'
 
     public read() {
         if (this.data.length) {
@@ -36,10 +37,29 @@ export class ProductService extends BehaviorSubject<Product[]> {
             });
     }
 
+    public save(product: Product, isNew?: boolean) {
+        let $save: Observable<Product>;
+        if (isNew)
+            $save = this.create(product);
+        else
+            $save = this.update(product);
 
-    private fetch = (): Observable<any[]> =>
+        $save.subscribe(_ => this.read());
+    }
+
+    private create = (product: Product): Observable<Product> =>
+        this.update(product);
+
+    private update = (product: Product): Observable<Product> =>
         this.http
-            .get(`http://localhost:3000/products`)
+            .put(`${this.apiUrl}/${product._id}`, product)
+            .pipe(
+                map(res => <Product>res)
+            );
+
+    private fetch = (): Observable<Product[]> =>
+        this.http
+            .get(`${this.apiUrl}`)
             .pipe(
                 map(res => (<Product[]>res).map(p => <Product>{ ...p, firstOrderedOn: new Date(p.firstOrderedOn) }))
             );

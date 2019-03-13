@@ -11,7 +11,12 @@
             [reorderable]="true"
             [resizable]="true"
             [selectable]="selectableOptions"
-            (dataStateChange)="onStateChange($event)">
+            (dataStateChange)="onStateChange($event)"
+            (edit)="editHandler($event)"
+            (cancel)="cancelHandler($event)"
+            (save)="saveHandler($event)"
+            (remove)="removeHandler($event)"
+            (add)="addHandler($event)">
     <ng-template kendoGridToolbarTemplate>
         <button type="button"
                 kendoGridPDFCommand
@@ -24,15 +29,18 @@
                                 width="70"></kendo-grid-checkbox-column>
     <kendo-grid-column field="name"
                        title="Name"
+                       editor="text"
                        [width]="300"></kendo-grid-column>
     <kendo-grid-column field="firstOrderedOn"
                        title="First Ordered On"
+                       editor="date"
                        width="240"
                        filter="date"
                        format="yyyy-MM-dd HH:mm">
     </kendo-grid-column>
     <kendo-grid-column field="unitPrice"
                        title="Unit Price"
+                       editor="numeric"
                        [width]="120"
                        filter="numeric"
                        format="{0:c}"></kendo-grid-column>
@@ -43,6 +51,21 @@
             {{value}}
         </ng-template>
     </kendo-grid-column>
+    <kendo-grid-command-column title="Ações"
+                               width="220">
+        <ng-template kendoGridCellTemplate
+                     let-isNew="isNew">
+            <!-- edit command directive, will be visible when not in edit mode -->
+            <button kendoGridEditCommand
+                    [primary]="true">Editar</button>
+            <!-- remove command directive, will be visible when not in edit mode -->
+            <button kendoGridRemoveCommand>Remover</button>
+            <!-- save command directive, will be visible when in edit mode -->
+            <button kendoGridSaveCommand>{{ isNew ? 'Add' : 'Atualizar' }}</button>
+            <!-- cancel command directive, will be visible when in edit mode -->
+            <button kendoGridCancelCommand>{{ isNew ? 'Descartar Mudanças' : 'Cancelar' }}</button>
+        </ng-template>
+    </kendo-grid-command-column>
     <ng-template kendoGridDetailTemplate
                  let-dataItem>
         <section *ngIf="dataItem.category">
