@@ -1,0 +1,170 @@
+{
+    "name": "Chai",
+    "supplierId": 1,
+    "categoryId": 1,
+    "quantityPerUnit": "10 boxes x 20 bags",
+    "unitPrice": 18,
+    "unitsInStock": 39,
+    "unitsOnOrder": 0,
+    "reorderLevel": 10,
+    "discontinued": false,
+    "category": {
+        "categoryId": 1,
+        "categoryName": "Beverages",
+        "description": "Soft drinks, coffees, teas, beers, and ales"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Chang",
+    "supplierId": 1,
+    "categoryId": 1,
+    "quantityPerUnit": "24 - 12 oz bottles",
+    "unitPrice": 19,
+    "unitsInStock": 17,
+    "unitsOnOrder": 40,
+    "reorderLevel": 25,
+    "discontinued": false,
+    "category": {
+        "categoryId": 1,
+        "categoryName": "Beverages",
+        "description": "Soft drinks, coffees, teas, beers, and ales"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Aniseed Syrup",
+    "supplierId": 1,
+    "categoryId": 2,
+    "quantityPerUnit": "12 - 550 ml bottles",
+    "unitPrice": 10,
+    "unitsInStock": 13,
+    "unitsOnOrder": 70,
+    "reorderLevel": 25,
+    "discontinued": false,
+    "category": {
+        "categoryId": 2,
+        "categoryName": "Condiments",
+        "description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Chef Anton's Cajun Seasoning",
+    "supplierId": 2,
+    "categoryId": 2,
+    "quantityPerUnit": "48 - 6 oz jars",
+    "unitPrice": 22,
+    "unitsInStock": 53,
+    "unitsOnOrder": 0,
+    "reorderLevel": 0,
+    "discontinued": false,
+    "category": {
+        "categoryId": 2,
+        "categoryName": "Condiments",
+        "description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Chef Anton's Gumbo Mix",
+    "supplierId": 2,
+    "categoryId": 2,
+    "quantityPerUnit": "36 boxes",
+    "unitPrice": 21.35,
+    "unitsInStock": 0,
+    "unitsOnOrder": 0,
+    "reorderLevel": 0,
+    "discontinued": true,
+    "category": {
+        "categoryId": 2,
+        "categoryName": "Condiments",
+        "description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Grandma's Boysenberry Spread",
+    "supplierId": 3,
+    "categoryId": 2,
+    "quantityPerUnit": "12 - 8 oz jars",
+    "unitPrice": 25,
+    "unitsInStock": 120,
+    "unitsOnOrder": 0,
+    "reorderLevel": 25,
+    "discontinued": false,
+    "category": {
+        "categoryId": 2,
+        "categoryName": "Condiments",
+        "description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Uncle Bob's Organic Dried Pears",
+    "supplierId": 3,
+    "categoryId": 7,
+    "quantityPerUnit": "12 - 1 lb pkgs.",
+    "unitPrice": 30,
+    "unitsInStock": 15,
+    "unitsOnOrder": 0,
+    "reorderLevel": 10,
+    "discontinued": false,
+    "category": {
+        "categoryId": 7,
+        "categoryName": "Produce",
+        "description": "Dried fruit and bean curd"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Northwoods Cranberry Sauce",
+    "supplierId": 3,
+    "categoryId": 2,
+    "quantityPerUnit": "12 - 12 oz jars",
+    "unitPrice": 40,
+    "unitsInStock": 6,
+    "unitsOnOrder": 0,
+    "reorderLevel": 0,
+    "discontinued": false,
+    "category": {
+        "categoryId": 2,
+        "categoryName": "Condiments",
+        "description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Mishi Kobe Niku",
+    "supplierId": 4,
+    "categoryId": 6,
+    "quantityPerUnit": "18 - 500 g pkgs.",
+    "unitPrice": 97,
+    "unitsInStock": 29,
+    "unitsOnOrder": 0,
+    "reorderLevel": 0,
+    "discontinued": true,
+    "category": {
+        "categoryId": 6,
+        "categoryName": "Meat/Poultry",
+        "description": "Prepared meats"
+    },
+    "firstOrderedOn": "2018-09-10"
+},
+{
+    "productName": "Ikura",
+    "supplierId": 4,
+    "categoryId": 8,
+    "quantityPerUnit": "12 - 200 ml jars",
+    "unitPrice": 31,
+    "unitsInStock": 31,
+    "unitsOnOrder": 0,
+    "reorderLevel": 0,
+    "discontinued": false,
+    "category": {
+        "categoryId": 8,
+        "categoryName": "Seafood",
+        "description": "Seaweed and fish"
+    },
+    "firstOrderedOn": "2018-09-10"
+}
