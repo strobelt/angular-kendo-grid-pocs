@@ -7,14 +7,20 @@ import { KendoGridComponent } from './kendo-grid/kendo-grid.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductService } from './product.service';
+import { KendoApiGridComponent } from './kendo-api-grid/kendo-api-grid.component';
+import { HttpClient, HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     KendoGridComponent,
+    KendoApiGridComponent,
     NavbarComponent
   ],
   imports: [
+    HttpClientModule,
+    HttpClientJsonpModule,
     BrowserModule,
     AppRoutingModule,
     GridModule,
@@ -22,7 +28,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PDFModule,
     ExcelModule
   ],
-  providers: [],
+  providers: [
+    {
+      deps: [HttpClient],
+      provide: ProductService,
+      useFactory: (jsonp: HttpClient) => () => new ProductService(jsonp)
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

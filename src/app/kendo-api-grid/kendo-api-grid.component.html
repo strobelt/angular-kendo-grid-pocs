@@ -1,0 +1,71 @@
+<kendo-grid [data]="view | async"
+            [groupable]="true"
+            [group]="gridState.group"
+            [skip]="gridState.skip"
+            [sort]="gridState.sort"
+            [sortable]="sortable"
+            [pageSize]="gridState.take"
+            [pageable]="true"
+            [filterable]="true"
+            [filter]="gridState.filter"
+            [reorderable]="true"
+            [resizable]="true"
+            [selectable]="selectableOptions"
+            (dataStateChange)="onStateChange($event)">
+    <ng-template kendoGridToolbarTemplate>
+        <button type="button"
+                kendoGridPDFCommand
+                icon="file-pdf">Baixar PDF</button>
+        <button type="button"
+                kendoGridExcelCommand
+                icon="file-excel">Baixar Excel</button>
+    </ng-template>
+    <kendo-grid-checkbox-column showSelectAll="true"
+                                width="70"></kendo-grid-checkbox-column>
+    <kendo-grid-column field="ProductID"
+                       title="ID"
+                       [width]="80"
+                       [filterable]="false"></kendo-grid-column>
+    <kendo-grid-column field="ProductName"
+                       title="Name"
+                       [width]="300"></kendo-grid-column>
+    <kendo-grid-column field="FirstOrderedOn"
+                       title="First Ordered On"
+                       width="240"
+                       filter="date"
+                       format="{0:d}">
+    </kendo-grid-column>
+    <kendo-grid-column field="UnitPrice"
+                       title="Unit Price"
+                       [width]="120"
+                       filter="numeric"
+                       format="{0:c}"></kendo-grid-column>
+    <kendo-grid-column field="Category.CategoryName"
+                       title="Category">
+        <ng-template kendoGridGroupHeaderTemplate
+                     let-value="value">
+            {{value}}
+        </ng-template>
+    </kendo-grid-column>
+    <ng-template kendoGridDetailTemplate
+                 let-dataItem>
+        <section *ngIf="dataItem.Category">
+            <p><strong>In Stock:</strong> {{dataItem.UnitsInStock}} units</p>
+            <p><strong>On Order:</strong> {{dataItem.UnitsOnOrder}} units</p>
+            <p><strong>Reorder Level:</strong> {{dataItem.ReorderLevel}} units</p>
+            <p><strong>Discontinued:</strong> {{dataItem.Discontinued}}</p>
+            <p><strong>Category:</strong> {{dataItem.Category?.CategoryName}} - {{dataItem.Category?.Description}}</p>
+        </section>
+    </ng-template>
+    <kendo-grid-pdf fileName="Produtos.pdf"
+                    [allPages]="true">
+        <kendo-grid-pdf-margin top="1cm"
+                               left="1cm"
+                               right="1cm"
+                               bottom="1cm"></kendo-grid-pdf-margin>
+    </kendo-grid-pdf>
+    <kendo-grid-excel fileName="Produtos.xlsx"></kendo-grid-excel>
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand>Add new</button>
+    </ng-template>
+</kendo-grid>
