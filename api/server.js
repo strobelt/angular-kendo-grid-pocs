@@ -9,6 +9,11 @@ var express = require('express'),
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/ProductsDb', { useNewUrlParser: true });
 
+var allowCrossDomain = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+}
+app.use(allowCrossDomain);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

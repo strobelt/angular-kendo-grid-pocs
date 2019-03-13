@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductService } from './product.service';
 import { KendoApiGridComponent } from './kendo-api-grid/kendo-api-grid.component';
 import { HttpClient, HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { IntlModule } from '@progress/kendo-angular-intl';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClient, HttpClientModule, HttpClientJsonpModule } from '@angular/co
     GridModule,
     BrowserAnimationsModule,
     PDFModule,
-    ExcelModule
+    ExcelModule,
+    IntlModule
   ],
   providers: [
     {
