@@ -31,11 +31,8 @@ import { IntlModule } from '@progress/kendo-angular-intl';
     IntlModule
   ],
   providers: [
-    {
-      deps: [HttpClient],
-      provide: ProductService,
-      useFactory: (jsonp: HttpClient) => () => new ProductService(jsonp)
-    }
+    ProductService,
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })

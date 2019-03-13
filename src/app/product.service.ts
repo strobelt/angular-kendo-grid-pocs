@@ -37,11 +37,10 @@ export class ProductService extends BehaviorSubject<Product[]> {
     }
 
 
-    private fetch(action: string = '', data?: any): Observable<any[]> {
-        return this.http
+    private fetch = (): Observable<any[]> =>
+        this.http
             .get(`http://localhost:3000/products`)
             .pipe(
                 map(res => (<Product[]>res).map(p => <Product>{ ...p, firstOrderedOn: new Date(p.firstOrderedOn) }))
             );
-    }
 }

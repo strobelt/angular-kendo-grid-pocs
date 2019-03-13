@@ -22,22 +22,18 @@ export class KendoApiGridComponent implements OnInit {
     };
     public formGroup: FormGroup;
 
-    private editService: ProductService;
-
-    constructor(@Inject(ProductService) editServiceFactory: any) {
-        this.editService = editServiceFactory();
-    }
+    constructor(private productService: ProductService) { }
 
     public ngOnInit(): void {
-        this.view = this.editService.pipe(map(data => process(data, this.gridState)));
+        this.view = this.productService.pipe(map(data => process(data, this.gridState)));
 
-        this.editService.read();
+        this.productService.read();
     }
 
     public onStateChange(state: State) {
         this.gridState = state;
 
-        this.editService.read();
+        this.productService.read();
     }
 
     public selectableOptions: SelectableSettings = {
