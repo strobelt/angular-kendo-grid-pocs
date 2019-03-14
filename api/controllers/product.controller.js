@@ -33,7 +33,7 @@ exports.update_product = (req, res) =>
     })
 
 exports.delete_product = (req, res) =>
-    Product.remove({ _id: req.params.productId }, (err, product) => {
+    Product.findOneAndRemove({ _id: req.params.productId }, (err, product) => {
         if (err)
             res.send(err)
         res.json({ message: 'Product deleted successfully' })

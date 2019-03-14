@@ -18,6 +18,8 @@
             (remove)="removeHandler($event)"
             (add)="addHandler($event)">
     <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand
+                icon="add">Adicionar</button>
         <button type="button"
                 kendoGridPDFCommand
                 icon="file-pdf">Baixar PDF</button>
@@ -62,7 +64,7 @@
             <!-- remove command directive, will be visible when not in edit mode -->
             <button kendoGridRemoveCommand>Remover</button>
             <!-- save command directive, will be visible when in edit mode -->
-            <button kendoGridSaveCommand>{{ isNew ? 'Add' : 'Atualizar' }}</button>
+            <button kendoGridSaveCommand>{{ isNew ? 'Adicionar' : 'Atualizar' }}</button>
             <!-- cancel command directive, will be visible when in edit mode -->
             <button kendoGridCancelCommand>{{ isNew ? 'Descartar Mudanças' : 'Cancelar' }}</button>
         </ng-template>

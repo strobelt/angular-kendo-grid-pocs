@@ -47,8 +47,17 @@ export class KendoApiGridComponent implements OnInit {
         mode: 'multiple'
     };
 
+    public addHandler({ sender }) {
+        const group = new FormGroup({
+            'name': new FormControl('', Validators.required),
+            'unitPrice': new FormControl(0, Validators.min(0)),
+            firstOrderedOn: new FormControl(new Date())
+        });
+
+        sender.addRow(group);
+    }
+
     public editHandler({ sender, rowIndex, dataItem }) {
-        // define all editable fields validators and default values
         const group = new FormGroup({
             '_id': new FormControl(dataItem._id),
             'name': new FormControl(dataItem.name, Validators.required),
@@ -56,11 +65,9 @@ export class KendoApiGridComponent implements OnInit {
             'firstOrderedOn': new FormControl(dataItem.firstOrderedOn)
         });
 
-        // put the row in edit mode, with the `FormGroup` build above
         sender.editRow(rowIndex, group);
     }
     public cancelHandler({ sender, rowIndex }) {
-        // close the editor for the given row
         sender.closeRow(rowIndex)
     }
     public saveHandler({ sender, rowIndex, formGroup, isNew }) {
@@ -71,5 +78,4 @@ export class KendoApiGridComponent implements OnInit {
         sender.closeRow(rowIndex);
     }
     public removeHandler() { }
-    public addHandler() { }
 }

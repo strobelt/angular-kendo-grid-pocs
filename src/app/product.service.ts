@@ -44,14 +44,14 @@ export class ProductService extends BehaviorSubject<Product[]> {
     }
 
     private create = (product: Product): Observable<Product> =>
-        this.update(product);
+        this.http
+            .post(`${this.apiUrl}/`, product)
+            .pipe(map(res => <Product>res));
 
     private update = (product: Product): Observable<Product> =>
         this.http
             .put(`${this.apiUrl}/${product._id}`, product)
-            .pipe(
-                map(res => <Product>res)
-            );
+            .pipe(map(res => <Product>res));
 
     private fetch = (): Observable<Product[]> =>
         this.http
