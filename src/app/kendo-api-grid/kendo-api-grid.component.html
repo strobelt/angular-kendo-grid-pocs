@@ -45,7 +45,8 @@
                        filter="numeric"
                        format="{0:c}"></kendo-grid-column>
     <kendo-grid-column field="category.categoryName"
-                       title="Category">
+                       title="Category"
+                       [width]="480">
         <ng-template kendoGridGroupHeaderTemplate
                      let-value="value">
             {{value}}

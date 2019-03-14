@@ -22,10 +22,6 @@ export class ProductService extends BehaviorSubject<Product[]> {
     private apiUrl = 'http://localhost:3000/products'
 
     public read() {
-        if (this.data.length) {
-            return super.next(this.data);
-        }
-
         this.fetch()
             .pipe(
                 tap(data => {
@@ -44,7 +40,7 @@ export class ProductService extends BehaviorSubject<Product[]> {
         else
             $save = this.update(product);
 
-        $save.subscribe(_ => this.read());
+        $save.subscribe(() => this.read());
     }
 
     private create = (product: Product): Observable<Product> =>
