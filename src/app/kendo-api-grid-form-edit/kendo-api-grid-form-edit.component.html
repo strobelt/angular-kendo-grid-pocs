@@ -1,0 +1,94 @@
+<kendo-grid [data]="view | async"
+            [groupable]="true"
+            [group]="gridState.group"
+            [skip]="gridState.skip"
+            [sort]="gridState.sort"
+            [sortable]="sortable"
+            [pageSize]="gridState.take"
+            [pageable]="true"
+            [filterable]="true"
+            [filter]="gridState.filter"
+            [reorderable]="true"
+            [resizable]="true"
+            [selectable]="selectableOptions"
+            (dataStateChange)="onStateChange($event)"
+            (edit)="editHandler($event)"
+            (cancel)="cancelHandler($event)"
+            (save)="saveHandler($event)"
+            (remove)="removeHandler($event)"
+            (add)="addHandler($event)">
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand
+                icon="add">Adicionar</button>
+        <button type="button"
+                kendoGridPDFCommand
+                icon="file-pdf">Baixar PDF</button>
+        <button type="button"
+                kendoGridExcelCommand
+                icon="file-excel">Baixar Excel</button>
+    </ng-template>
+    <kendo-grid-checkbox-column showSelectAll="true"
+                                width="70"></kendo-grid-checkbox-column>
+    <kendo-grid-column field="name"
+                       title="Name"
+                       editor="text"
+                       [width]="300"></kendo-grid-column>
+    <kendo-grid-column field="firstOrderedOn"
+                       title="First Ordered On"
+                       editor="date"
+                       width="240"
+                       filter="date"
+                       format="yyyy-MM-dd HH:mm">
+    </kendo-grid-column>
+    <kendo-grid-column field="unitPrice"
+                       title="Unit Price"
+                       editor="numeric"
+                       [width]="120"
+                       filter="numeric"
+                       format="{0:c}"></kendo-grid-column>
+    <kendo-grid-column field="category.categoryName"
+                       title="Category"
+                       [width]="480">
+        <ng-template kendoGridGroupHeaderTemplate
+                     let-value="value">
+            {{value}}
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-command-column title="Ações"
+                               width="220">
+        <ng-template kendoGridCellTemplate
+                     let-isNew="isNew">
+            <button kendoGridEditCommand
+                    [primary]="true">Editar</button>
+            <button kendoGridRemoveCommand>Remover</button>
+            <button kendoGridSaveCommand>{{ isNew ? 'Adicionar' : 'Atualizar' }}</button>
+            <button kendoGridCancelCommand>{{ isNew ? 'Descartar Mudanças' : 'Cancelar' }}</button>
+        </ng-template>
+    </kendo-grid-command-column>
+    <ng-template kendoGridDetailTemplate
+                 let-dataItem>
+        <section *ngIf="dataItem.category">
+            <p><strong>In Stock:</strong> {{dataItem.unitsInStock}} units</p>
+            <p><strong>On Order:</strong> {{dataItem.unitsOnOrder}} units</p>
+            <p><strong>Reorder Level:</strong> {{dataItem.reorderLevel}} units</p>
+            <p><strong>Discontinued:</strong> {{dataItem.discontinued}}</p>
+            <p><strong>Category:</strong> {{dataItem.category?.categoryName}} - {{dataItem.category?.description}}</p>
+        </section>
+    </ng-template>
+    <kendo-grid-pdf fileName="Produtos.pdf"
+                    [allPages]="true">
+        <kendo-grid-pdf-margin top="1cm"
+                               left="1cm"
+                               right="1cm"
+                               bottom="1cm"></kendo-grid-pdf-margin>
+    </kendo-grid-pdf>
+    <kendo-grid-excel fileName="Produtos.xlsx"></kendo-grid-excel>
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand>Add new</button>
+    </ng-template>
+</kendo-grid>
+<edit-form [model]="editDataItem"
+           [isNew]="isNew"
+           (save)="saveHandler($event)"
+           (cancel)="cancelHandler()">
+</edit-form>

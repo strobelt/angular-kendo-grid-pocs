@@ -5,30 +5,40 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KendoGridComponent } from './kendo-grid/kendo-grid.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DialogModule } from '@progress/kendo-angular-dialog';
+
 import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductService } from './product.service';
 import { KendoApiGridComponent } from './kendo-api-grid/kendo-api-grid.component';
-import { HttpClient, HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { IntlModule } from '@progress/kendo-angular-intl';
+import { KendoApiGridFormEditComponent } from './kendo-api-grid-form-edit/kendo-api-grid-form-edit.component';
+import { EditFormComponent } from './kendo-api-grid/edit-form/edit-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
 
 @NgModule({
   declarations: [
     AppComponent,
     KendoGridComponent,
     KendoApiGridComponent,
+    KendoApiGridFormEditComponent,
+    EditFormComponent,
     NavbarComponent
   ],
   imports: [
     HttpClientModule,
-    HttpClientJsonpModule,
     BrowserModule,
     AppRoutingModule,
     GridModule,
+    DatePickerModule,
     BrowserAnimationsModule,
     PDFModule,
     ExcelModule,
-    IntlModule
+    IntlModule,
+    DialogModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductService,
