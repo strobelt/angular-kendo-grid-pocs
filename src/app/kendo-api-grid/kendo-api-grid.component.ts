@@ -77,5 +77,7 @@ export class KendoApiGridComponent implements OnInit {
 
         sender.closeRow(rowIndex);
     }
-    public removeHandler() { }
+    public removeHandler({ dataItem }) {
+        this.productService.remove(dataItem);
+    }
 }

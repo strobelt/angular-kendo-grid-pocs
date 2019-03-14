@@ -22,6 +22,10 @@ export class ProductService extends BehaviorSubject<Product[]> {
     private apiUrl = 'http://localhost:3000/products'
 
     public read() {
+        if (this.data.length) {
+            return super.next(this.data);
+        }
+
         this.fetch()
             .pipe(
                 tap(data => {
@@ -33,14 +37,25 @@ export class ProductService extends BehaviorSubject<Product[]> {
             });
     }
 
+    public reset = () => this.data = [];
+
     public save(product: Product, isNew?: boolean) {
+        this.reset();
+
         let $save: Observable<Product>;
         if (isNew)
             $save = this.create(product);
         else
             $save = this.update(product);
 
-        $save.subscribe(() => this.read());
+        $save.subscribe(() => this.read(), () => this.read());
+    }
+
+    public remove(product: Product) {
+        this.reset();
+
+        this.delete(product)
+            .subscribe(() => this.read(), () => this.read());
     }
 
     private create = (product: Product): Observable<Product> =>
@@ -52,6 +67,10 @@ export class ProductService extends BehaviorSubject<Product[]> {
         this.http
             .put(`${this.apiUrl}/${product._id}`, product)
             .pipe(map(res => <Product>res));
+
+    private delete = (product: Product): Observable<any> =>
+        this.http
+            .delete(`${this.apiUrl}/${product._id}`);
 
     private fetch = (): Observable<Product[]> =>
         this.http
