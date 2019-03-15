@@ -3,7 +3,7 @@
 const mongoose = require('mongoose'),
     Product = mongoose.model('Products')
 
-exports.list_all_products = (req, res) =>
+exports.list_all_products = (_req, res) =>
     Product.find({}, (err, products) => {
         if (err)
             res.send(err)
@@ -33,7 +33,7 @@ exports.update_product = (req, res) =>
     })
 
 exports.delete_product = (req, res) =>
-    Product.findOneAndRemove({ _id: req.params.productId }, (err, product) => {
+    Product.findOneAndRemove({ _id: req.params.productId }, (err, _product) => {
         if (err)
             res.send(err)
         res.json({ message: 'Product deleted successfully' })

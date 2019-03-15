@@ -16,7 +16,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Chang",
+    "name": "Chang",
     "supplierId": 1,
     "categoryId": 1,
     "quantityPerUnit": "24 - 12 oz bottles",
@@ -33,7 +33,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Aniseed Syrup",
+    "name": "Aniseed Syrup",
     "supplierId": 1,
     "categoryId": 2,
     "quantityPerUnit": "12 - 550 ml bottles",
@@ -50,7 +50,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Chef Anton's Cajun Seasoning",
+    "name": "Chef Anton's Cajun Seasoning",
     "supplierId": 2,
     "categoryId": 2,
     "quantityPerUnit": "48 - 6 oz jars",
@@ -67,7 +67,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Chef Anton's Gumbo Mix",
+    "name": "Chef Anton's Gumbo Mix",
     "supplierId": 2,
     "categoryId": 2,
     "quantityPerUnit": "36 boxes",
@@ -84,7 +84,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Grandma's Boysenberry Spread",
+    "name": "Grandma's Boysenberry Spread",
     "supplierId": 3,
     "categoryId": 2,
     "quantityPerUnit": "12 - 8 oz jars",
@@ -101,7 +101,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Uncle Bob's Organic Dried Pears",
+    "name": "Uncle Bob's Organic Dried Pears",
     "supplierId": 3,
     "categoryId": 7,
     "quantityPerUnit": "12 - 1 lb pkgs.",
@@ -118,7 +118,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Northwoods Cranberry Sauce",
+    "name": "Northwoods Cranberry Sauce",
     "supplierId": 3,
     "categoryId": 2,
     "quantityPerUnit": "12 - 12 oz jars",
@@ -135,7 +135,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Mishi Kobe Niku",
+    "name": "Mishi Kobe Niku",
     "supplierId": 4,
     "categoryId": 6,
     "quantityPerUnit": "18 - 500 g pkgs.",
@@ -152,7 +152,7 @@
     "firstOrderedOn": "2018-09-10"
 },
 {
-    "productName": "Ikura",
+    "name": "Ikura",
     "supplierId": 4,
     "categoryId": 8,
     "quantityPerUnit": "12 - 200 ml jars",

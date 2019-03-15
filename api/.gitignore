@@ -1,1 +1,4 @@
 node_modules
+# Ignore files but keep folder
+files/*
+!files/.placeholder

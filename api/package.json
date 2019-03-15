@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "debug": "nodemon --inspect server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "connect-busboy": "0.0.2",
     "express": "^4.16.4",
-    "mongoose": "^5.4.19"
+    "mongoose": "^5.4.19",
+    "shortid": "^2.2.14"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
