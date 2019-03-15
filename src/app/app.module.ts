@@ -17,6 +17,8 @@ import { KendoApiGridFormEditComponent } from './kendo-api-grid-form-edit/kendo-
 import { EditFormComponent } from './kendo-api-grid/edit-form/edit-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
+import { TextBoxModule, NumericTextBoxModule } from '@progress/kendo-angular-inputs';
+import { ButtonModule } from '@progress/kendo-angular-buttons';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
     ExcelModule,
     IntlModule,
     DialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextBoxModule,
+    NumericTextBoxModule,
+    ButtonModule
   ],
   providers: [
     ProductService,
